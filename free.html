@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Your CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #ccc;
+    }
+    
+    th, td {
+      padding: 8px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Faculty Info</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Cabin Details</th>
+          <th>Current Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dr.RAVISANKAR BARPANDA</td>
+          <td>AB-1,329-A</td>
+          <td>In Class</td>
+        </tr>
+        <tr>
+          <td>Dr.HARI SEETHA</td>
+          <td>CB-222</td>
+          <td>Available in Cabin</td>
+        </tr>
+        <tr>
+          <td>Dr.GANESH REDDY</td>
+          <td>CB-221</td>
+          <td>In Class</td>
+        </tr>
+        <tr>
+            <td>Dr.ARUNKUMAR BALAKRISHNAN</td>
+            <TD>CB-327-A</TD>
+            <td>On Leave</td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+      
+    </table>
+    <button type="button" ><a href="Facultyinfo.html">Back</a></button>
+  </div>
+  
+  <script>
+    // JavaScript code will go here
+    const backButton = document.getElementById('back-button');
+    backButton.addEventListener('click', function() {
+        window.history.back();
+      });
+  </script>
+</body>
+</html>

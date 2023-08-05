@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Your CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    select, button {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      margin-bottom: 15px;
+    }
+    
+    button {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    
+    button.back-button {
+      background-color: #ccc;
+    }
+    
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Faculty Info</h2>
+    <form id="dropdown-form">
+      <label for="options">Select the Department</label>
+      <select id="options" name="options">
+        <option value="SCOPE">SCOPE</option>
+        <option value="SENSE">SENSE</option>
+        <option value="SAS">SAS</option>
+        <option value="MECH">MECH</option>
+        <option value="VSL">VSL</option>
+        <option value="VISH">VISH</option>
+        <option value="VSB">VSB</option>
+      </select>
+      
+      <button type="submit"><a href="free.html">submit</a></button>
+      <button type="button"><a href="index.html">Back</a></button>
+    </form>
+  </div>
+
+</body>
+</html>

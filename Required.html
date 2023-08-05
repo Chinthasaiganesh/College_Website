@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .Anu {
+        align-items: center;
+        
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    
+    h1 {
+      text-align: center;
+      padding: 20px;
+    }
+    
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    input,
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    
+    button {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #0056b3;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th, td {
+        border: 1px solid #ccc;
+        padding: 8px;
+        text-align: left;
+      }
+      
+      th {
+        background-color: #f2f2f2;
+      }
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        align-items: center;
+      }
+  </style>
+</head>
+<body>  
+    <div class="container">    
+  <label for="form-option" >Select your choice:</label>
+  <select id="form-option" name="form-option">
+    <option value="form1">Having Plans</option>
+    <option value="form2">Having Skills</option>
+  </select>
+  <button type="button" id="back-button">Back</button>
+  </div>
+  <div id="form1" style="display: none;">
+
+  
+  
+  <form id="requirement-form">
+    <h1>Project Requirement Form</h1>
+    <label for="project-name">Project Name:</label>
+    <input type="text" id="project-name" required>
+    
+    <label for="client-name">Project Type:</label>
+    <input type="text" id="client-name" required>
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+    
+    <label for="project-description">Project Description:</label>
+    <textarea id="project-description" rows="4" required></textarea>
+    
+    <label for="deadline">Deadline:</label>
+    <input type="date" id="deadline" required>
+
+    <label for="category">Select your requirement category:</label>
+  <select id="category" name="category">
+    <option value="FD">FrontEnd</option>
+    <option value="BE">BackEnd</option>
+    <option value="Flutter">Flutter</option>
+    <option value="AD">Android Development</option>
+    <option value="other">Other</option>
+  </select>
+  <div id="other-position-details" style="display: none;">
+    <label for="other-position">Specify Other Category:</label>
+    <input type="text" id="other-position" name="other-position">
+  </div>
+  <ul id="item-list" style="display: none;">
+    <!-- List items with checkboxes will be dynamically added here -->
+  </ul>
+  <button type="submit">Submit</button>
+  <button type="button" id="back-button">Back</button>
+  </form>
+  </div>
+
+
+  <div id="form2" style="display: none;">
+    <form id="form2-details">
+        <h1>Project Details</h1>
+  
+        <table>
+          <thead>
+            <tr>
+              <th>Project Name</th>
+              <th>Required Skills</th>
+              <th>No. of People Required</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Website Redesign</td>
+              <td>UI/UX Design, HTML, CSS, JavaScript</td>
+              <td>3</td>
+              <td><a href="sample.html">Apply now</td>
+            </tr>
+            <tr>
+              <td>Mobile App Development</td>
+              <td>Mobile App Design, React Native, API Integration</td>
+              <td>5</td>
+              <td ><a href="sample.html">Apply now</td>
+            </tr>
+            <tr>
+              <td>Data Analysis Project</td>
+              <td>Data Analytics, Python, SQL, Data Visualization</td>
+              <td>2</td>
+              <td><a href="sample.html">Apply now</td>
+            </tr>
+    </form>
+  </div>
+
+
+  <script>
+    const positionDropdown = document.getElementById('category');
+    const otherPositionDetails = document.getElementById('other-position-details');
+    const backButton = document.getElementById('back-button');
+    const requirementForm = document.getElementById('requirement-form');
+requirementForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  
+  // Collect form data and process it here
+  
+  alert('Thank you! Your project requirements have been submitted.');
+  requirementForm.reset();
+});
+    const formOptionDropdown = document.getElementById('form-option');
+    const form1 = document.getElementById('form1');
+    const form2 = document.getElementById('form2');
+    
+    formOptionDropdown.addEventListener('change', function() {
+      form1.style.display = 'none';
+      form2.style.display = 'none';
+      
+      const selectedForm = this.value;
+      
+      if (selectedForm === 'form1') {
+        form1.style.display = 'block';
+      } else if (selectedForm === 'form2') {
+        form2.style.display = 'block';
+      }
+    });
+    positionDropdown.addEventListener('change', function() {
+        if (this.value === 'other') {
+          otherPositionDetails.style.display = 'block';
+        } else {
+          otherPositionDetails.style.display = 'none';
+        }
+      });
+    backButton.addEventListener('click', function() {
+        window.history.back();
+      });
+  </script>
+  
+  </form>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+

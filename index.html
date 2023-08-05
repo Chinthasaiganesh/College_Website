@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      src="https://kit.fontawesome.com/5a61e3442a.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body{
+        font-family:'Roboto';
+        background-image: url("https://undsgn.com/wp-content/uploads/2018/04/ltotbngnzzu-uai-1600x900.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .logo2{
+        height:60px; 
+        width:80px;
+      }
+      .carousel {
+        width: 100%;
+        height: 90vh;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+
+      .carousel-slide.active {
+        opacity: 1;
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .logo {
+        margin-left: 20px;
+        height: 400px;
+        width: 70%;
+        background-size: cover;
+        margin-right: 0px;
+        margin-top: 0;
+      }
+      .carousel-button-container {
+        /* position: absolute;
+        top: 80%;
+        left: 50%; */
+        order: 1;
+        justify-self: center;
+        align-self: end;
+        padding-bottom: 100px;
+      }
+      .carousel-button {
+        border: 2px solid #ddd;
+        background-color: #ddd;
+        width: 70px;
+        height: 8px;
+        margin-right: 20px;
+        border-radius: 3px;
+      }
+      .carousel-button.active {
+        background-color: #3a80dc;
+        border: 2px solid #3a80dc;
+      }
+
+      .carousel-button:visited ,.carousel-button:hover,
+      .carousel-button:active {
+        height: 15px;
+      }
+      .caurosel-description {
+        /* position: absolute;
+        top: 10%;
+        left: 5%; */
+        width: 50%;
+        color: #fff;
+        font-size: 18px;
+      }
+      .caurosel-description-heading {
+        margin-left: 20px;
+        color:rgb(11, 11, 10);
+      }
+      .nav-items {
+        order: 2;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+      }
+
+      .main-nav-items ul {
+        list-style: none;
+      }
+      .main-nav-items ul li {
+        width: 210px;
+        height: 50px;
+        border-radius: 12px;
+        background-color:#3a80dc;
+        color: white;
+        margin-bottom: 5px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .main-nav-items ul li i {
+        margin-right: 10px;
+      }
+      .normal-nav-items ul {
+        list-style: none;
+        
+      }
+
+      .normal-nav-items ul li {
+        width: 210px;
+        height: 50px;
+        border-radius: 12px;
+        background-color: #3a80dc;
+        color: white;
+        margin-bottom: 5px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+      }
+      .normal-nav-items ul li a {
+        color:white; 
+        text-decoration: none;
+      }
+
+      .normal-nav-items ul li i {
+        margin-right: 10px;
+      }
+      .caurosel-1 {
+        display: flex;
+        position: absolute;
+        top: 5%;
+        justify-content: space-between;
+      }
+      .news-section-item-1-img {
+        height: 100px;
+        width: 100px;
+        background-size: cover;
+      }
+      .news-section{
+        background-color:#eee;
+        padding:20px;
+        width:50%; 
+      }
+      .new-section-content {
+        margin-top:40px;
+        margin-left:40px;
+        margin-bottom:20px;
+        background-color: white;
+        display: flex;
+        gap:30px;
+        box-shadow: 2px 2px rgba(0,0,0,0.025);
+      }
+      .news_and_events_container{
+        display: flex;
+        
+      }
+       .date{
+        height:70px; 
+        width:70px;
+        background-color:#3a80dc; 
+        border:2px solid #3a80dc; 
+        color:white;
+        padding: 0 5px;
+        margin-top: 0;
+        margin-bottom: 0;
+        
+      }
+      .events-section-date{
+        font-size: 28px;
+        margin-top:0;
+        margin-bottom: 0;
+      }
+      .read-more-btn {
+      background-color: #3a80dc;
+      color: white;
+      border: none;
+      height:60px; 
+      width:160px;
+      font-size: 18px;
+      margin-left:40px;
+      }
+      /* ############ JAHNAVI SECTION ################# */
+      .c1 {
+        text-align: center;
+        width: 250px;
+        height: 200px;
+        color: rgb(201, 7, 7);
+        padding: 40px 60px;
+        
+      }
+      .c2 {
+        background-image: url("https://ik.imagekit.io/mepl/wp-content/uploads/2020/12/26.png");
+        background-size: 400px 300px;
+        background-repeat: no repeat;
+        display: inline-block;
+        display: flex;
+        transition: transform 1s ease-in-out;
+      }
+      .c3 {
+        background-image: url("https://www.bms.co.in/wp-content/uploads/2015/01/college-life2.jpg");
+        background-size: 400px 300px;
+        background-repeat: no repeat;
+        display: inline-block;
+      }
+      .c4 {
+        background-image: url("https://images.ctfassets.net/2htm8llflwdx/Y0mAruESDwFn4MO5GbYyr/f898df53e63d503d63321d8aea34fdf8/GettyImages-947895170.jpg");
+        background-size: 400px 300px;
+        background-repeat: no repeat;
+        display: inline-block;
+      }
+      .e1 {
+        margin-bottom: 30px;
+        line-height: 1.5;
+        color: ghostwhite;
+      }
+      .e2 {
+        padding:20px;
+        color:black;
+        text-decoration: none;
+        background-color:#3a80dc;
+        border-style: none;
+      }
+      .main {
+        display: flex;
+        margin: 100px 20px;
+        justify-content: space-around;
+      }
+
+
+      /* FOOTER SECTION */
+      .logo1{
+        height:200px; 
+        padding-top:50px;
+      }
+      
+      .a{
+        color:#3a80dc;
+        font-weight: 600;
+      }
+      .footer-section-sec-2 ul li p{
+        display: inline;
+        margin-left:15px;
+      }
+      .footer-section-sec-2 ul li{
+         margin-bottom:15px;
+      }
+      .footer-section-sec-4 ul li p{
+        display: inline;
+        margin-left:15px;
+      }
+      .footer-section-sec-4 ul li{
+         margin-bottom:15px;
+      }
+      .footer-section-sec-2  ul,.footer-section-sec-4 ul{
+        margin-left:0;
+        list-style: none;
+      }
+      .footer-section-sec-1{
+        width:23%;
+        padding:0 50px; 
+        
+      }
+     .footer-section{
+      display: flex;
+      justify-content: space-between;
+      background-color: #eee;
+      margin-top:50px;
+     }
+     button:active {
+      background-color:#3a9edc;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+      transform: translateY(1px);
+      border: 1px solid #3a80dc;
+    }
+     a:active,a:visited {
+      color:white;
+      text-decoration: none;
+    }
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color:#3a80dc;
+  color: #fff;
+  padding: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1; /* Set a high z-index to ensure the navbar is above other elements */
+}
+/* The rest of the CSS code remains the same */
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 10px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.nav-link:hover {
+  background-color: #fff;
+  color: #333;
+}
+.title-bar {
+  background-color: #3a80dc;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  
+}
+
+/* Slides */
+.slide {
+  display: none;
+  width: 100%;
+  height: 100% !important;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  ;
+}
+
+/* Navigation menu styles */
+.V {
+  display: flex;
+  justify-content: center;
+  background-color: #3a80dc;
+  padding: 10px 0;
+}
+/* Main heading styles */
+.main-heading {
+  font-size: 36px;
+  color: whitesmoke;
+  margin: 10px ;
+  text-align: center;
+  padding: 10;
+}
+
+.VI {
+  margin: 0 10px;
+  padding: 5px 10px;
+  color:whitesmoke ;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: #666;}
+
+  .chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+    </style>
+  </head>
+ 
+  <body>
+    <div class="chat-icon" id="chat-icon" ><a href="chatbot.html">Chat Assist</a></div>
+
+    <div class="title-bar">
+      
+      <img src="https://vitap.ac.in/wp-content/themes/vit/assets/images/formlogo.png" height="100" width="300">
+    </div>
+    <div class="main-heading">
+      <h5><i>Apply Knowledge.Improve Life!</i></h5>
+    </div>
+    <div class="V">
+      <a  href="#" class="VI">Home</a>
+      <a href="https://vitap.ac.in/"  class="VI">About</a>
+      <a href="21BCE9476.html" class="VI">Services</a>
+      <a href="exam.html" class="VI">Exam portal</a>
+      <a href="Required.html" class="VI">Projects</a>
+      <a href="Facultyinfo.html" class="VI">Faculty Info</a>
+      <a href="form.html" class="VI">Contact</a>
+    </div>
+    <div class="slideshow-container">
+      <div class="slide">
+        <img src="https://vitap.ac.in/wp-content/uploads/2021/04/Central-Block-scaled.jpg" alt="Img 1" height="400">
+      </div>
+    
+      <div class="slide">
+        <img src="https://vitap.ac.in/wp-content/uploads/2020/07/AB2.jpg" alt="Img 2" height="400">
+      </div>
+    
+      <div class="slide">
+        <img src="https://vitap.ac.in/wp-content/uploads/2022/03/PAT_Stastics.jpg" alt="Img 3" height="0">
+      </div>
+    </div>
+    
+    <script>
+      let slideIndex = 0;
+      showSlides();
+    
+      function showSlides() {
+        let slides = document.getElementsByClassName("slide");
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // Change slide every 3 seconds
+      }
+    </script>
+  ////////////////////////////////////////////////////////////////
+
+
+    <!-- ###################### JAHNAVI SECTION ####################### -->
+    <div class="main">
+      <div class="c2">
+        <div class="c1">
+          <h2>Faculty & Research</h2>
+          <p class="e1">
+            <b>Faculty members carry out research and publish in academic journals.</b>
+          </p>
+          
+          <a href="faculty&research.html" class="e2">&#10095;</a>
+        </div>
+      </div>
+      <div class="c3">
+        <div class="c1">
+          <h2>About Hostels</h2>
+          <p class="e1">
+            <b>We consider it our duty to train our students and participants to be
+            sensible and considerate leaders.</b>
+          </p>
+          <a href="https://vitap.ac.in/hostels/" class="e2">&#10095;</a>
+        </div>
+      </div>
+      <div class="c4">
+        <div class="c1">
+          <h2>Events</h2>
+          <p class="e1">
+            <b>Check out our Open days, Experience sessions,Online sessions and
+            many more.</b>
+          </p>
+          <a href="https://vitap.ac.in/gallery/" class="e2">&#10095;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ##################### NEWS SECTION ####################### -->
+    <div class="news_and_events_container">
+    <div  class="news-section">
+      <h1>Faculty</h1>
+      <hr />
+      <div class="new-section-content">
+        <div>
+          <img
+            src="https://vitap.ac.in/wp-content/uploads/2019/06/Dr.-HARI-SEETHA.jpg"
+            class="news-section-item-1-img"
+          />
+        </div>
+        <div class="news-section-item-1-description">
+            <p>Dr.HARI SEETHA, professor of VIT-AP</p>
+            <p>SCOPE | MAY-12, 2021</p>
+        </div>
+      </div>
+     
+
+
+      <div class="new-section-content">
+        <div>
+          <img
+            src="https://vitap.ac.in/wp-content/uploads/2019/06/Mr.-B.-RAVI-SANKAR-BARPANDA.jpg"
+            class="news-section-item-1-img"
+          />
+          </div>
+        <div class="news-section-item-1-description">
+            <p>Dr.RAVISANKAR BARPANDA, professor of VIT-AP</p>
+            <p>SCOPE | AUG-15, 2021</p>
+        </div>
+      </div>
+      
+
+
+      <div class="new-section-content">
+        <div>
+          <img
+            src="https://vitap.ac.in/wp-content/uploads/2019/08/ganesh-reddy-1.jpg"
+            class="news-section-item-1-img"
+          />
+          </div>
+          <div class="news-section-item-1-description">
+            <p>Dr.GANESH REDDY, professor of VIT-AP</p>
+            <p>SCOPE | SEPT-05, 2022</p>
+          </div>
+        </div>
+
+        <button class="read-more-btn">Load More</button>
+
+      </div>
+    
+ 
+  
+
+
+  <!-- ################################ EVENTS-SECTION ####################################  -->
+  <div  class="news-section">
+    <h1>Events</h1>
+    <hr />
+    <div class="new-section-content">
+      <div class="date">
+        <p class="events-section-date">11</p>
+        <p>Aug</p>
+      </div>
+      <div class="news-section-item-1-description">
+          <p>BLOCK CHAIN RATHYATRA-2023</p>
+          
+      </div>
+    </div>
+    
+
+
+    <div class="new-section-content">
+      <div class="date">
+        <p class="events-section-date">23</p>
+        <p>May</p>
+      </div>
+      <div class="news-section-item-1-description">
+          <p>University Day Celebrations</p>
+          
+      </div>
+    </div>
+
+    <div class="new-section-content">
+      <div class="date">
+        <p class="events-section-date">09</p>
+        <p>Mar</p>
+      </div>
+      <div class="news-section-item-1-description">
+          <p>VTAPP-An International Tech Fest</p>
+          
+      </div>
+    </div>
+
+    <div class="new-section-content">
+      <div class="date">
+        <p class="events-section-date">21</p>
+        <p>Feb</p>
+      </div>
+      <div class="news-section-item-1-description">
+          <p>VITopia-2023</p>
+          
+      </div>
+    </div>
+
+     
+
+    <button class="read-more-btn">Read More</button>
+
+
+  </div>
+</div>
+
+
+  <!-- ######### FOOTER SECTION ################################ -->
+  <div class="footer-section">
+    <div class="footer-section-sec-1">
+      <img src="https://vitap.ac.in/wp-content/uploads/2017/12/vitapnew.png" class="logo1" width="250" />
+      <p>VIT AP University (VIT AP) is a private university that was established in 2017 and is situated in Amaravati, 
+        Andhra Pradesh. The university offers various UG, PG, and Ph.D. courses in Engineering, Management, Commerce, etc. 
+        Admission to VIT AP is done on the basis of marks obtained in the entrance examinations like VITEEE, VITMEE, VITREE, etc. The university was established as a sister institute of Vellore Institute of Technology (VIT) 
+      </p>
+      <a href="#" class="a">MORE ABOUT US</a>
+    </div>
+
+    <div class="footer-section-sec-2">
+      <h2>Courses</h2>
+      <ul>
+        <li>
+          <button class="e2">&#10095;</button>
+          <p>Bachelor</p>
+        </li>
+        <li>
+          <button class="e2">&#10095;</button>
+          <p>Master</p>
+        </li>
+        <li>
+          <button class="e2">&#10095;</button>
+          <p>MBA</p>
+        </li>
+        <li>
+          <button class="e2">&#10095;</button>
+          <p>LAW</p>
+        </li>
+        <li>
+          <button class="e2">&#10095;</button>
+          <p>BUSINESS</p>
+        </li>
+      </ul>
+
+      <a href="#" class="a">VIEW ALL</a>
+    </div>
+
+    <div class="footer-section-sec-3">
+      <h2>Contact</h2>
+      <p>VITAP university</p>
+      <p>Beside AP Secretariat,Amaravati</p>
+      <p>Vijayawada-522237</p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15302.42295926669!2d80.50968865!3d16.49548945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1691216401018!5m2!1sen!2sin" width="300" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+    </div>
+
+
+    <div class="footer-section-sec-4">
+      <h2>Links</h2>
+      <ul>
+        <li>
+          <button class="e2" onclick="window.location.href='student_portal.html';">&#10095;</button>
+          <p>Accessibility</p>
+        </li>
+        <li>
+          <button class="e2" onclick="window.location.href='exam.html';">&#10095;</button>
+          <p>Examination</p>
+        </li>
+          <li>
+            <a href="faculty&research.html">
+          <button class="e2" >&#10095;</button>
+          </a>
+          <p>Faculty and Research</p>
+        </li>
+        <li>
+          <button class="e2">&#10095;</button>
+          <p>International</p>
+        </li>
+        <li>
+          <button class="e2" onclick="window.location.href='login.php';">&#10095;</button>
+          <p>Login</p>
+        </li>
+        <li>
+          <button class="e2">&#10095;</button>
+          <p>Alumini</p>
+        </li>
+        <li>
+          <button class="e2">&#10095;</button>
+          <p>Library</p>
+        </li>
+        <li>
+          <button class="e2" href="#">&#10095;</button>
+          <p>Hospitality</p>
+        </li>
+        
+      </ul>
+      
+    </div>
+  </div>
+</div>
+
+
+    <script>
+      const carousel = document.querySelector(".carousel");
+      const slides = carousel.querySelectorAll(".carousel-slide");
+
+      const numberOfSlides = slides.length;
+      let currentSlide = 0;
+
+      function showSlide(slide) {
+        slides[currentSlide].classList.remove("active");
+        slides[slide].classList.add("active");
+
+        currentSlide = slide;
+      }
+
+      function nextSlide() {
+        let slide = currentSlide + 1;
+        if (slide >= numberOfSlides) {
+          slide = 0;
+        }
+        showSlide(slide);
+      }
+
+      const buttons = document.querySelectorAll(".carousel-button");
+      let previousButton = null;
+
+      function increaseButtonHeight(button) {
+        if (previousButton !== null) {
+          previousButton.classList.remove("active");
+          previousButton.style.height = "8px";
+        }
+
+        button.classList.add("active");
+        button.style.height = "15px ";
+
+        previousButton = button;
+      }
+    
+    
+      // ################################ NAVBAR #####################################
+      const navSlide = () => {
+      const burger = document.querySelector('.burger');
+      const nav = document.querySelector('.navbar-nav');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+
+        navLinks.forEach((link, index) => {
+          if (link.style.animation) {
+            link.style.animation = '';
+          } else {
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+          }
+        });
+
+        burger.classList.toggle('toggle');
+      });
+}
+
+navSlide();
+
+    </script>
+  </body>
+</html>
